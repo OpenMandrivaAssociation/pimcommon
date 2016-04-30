@@ -21,13 +21,18 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5IMAP)
 BuildRequires: cmake(KF5NewStuff)
 BuildRequires: cmake(KF5PimTextEdit)
+BuildRequires: cmake(KF5DBusAddons)
+BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5DocTools)
 BuildRequires: sasl-devel
+BuildRequires: boost-devel
 
 %description
 KDE library for personal information management
