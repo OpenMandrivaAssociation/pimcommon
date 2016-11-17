@@ -22,6 +22,7 @@ BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5UiTools)
 BuildRequires: cmake(KF5Akonadi)
+BuildRequires: cmake(KF5AkonadiMime)
 BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
@@ -57,10 +58,9 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-cd ../
 %ninja -C build
 
 %install
