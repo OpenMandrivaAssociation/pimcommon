@@ -10,7 +10,7 @@ Version:	17.04.1
 %else
 %define ftpdir stable
 %endif
-Release:	3
+Release:	4
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for personal information management
 URL: http://kde.org/
@@ -35,7 +35,8 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
-Obsoletes:	kdepim-core < 3:16.08.3-5
+Obsoletes:	kdepim-core <= 3:16.08.3-4
+Obsoletes:	kdepim-core = 3:16.08.3-5
 Provides:	storageservicemanager = 3:16.08.3-5
 Obsoletes:	storageservicemanager <= 3:16.08.3-4
 
