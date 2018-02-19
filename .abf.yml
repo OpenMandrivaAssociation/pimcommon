@@ -1,2 +1,4 @@
+removed_sources:
+  pimcommon-17.12.1.tar.xz: 2c629c2a4eebda99e9ede6ef863693b8b8ced2bd
 sources:
-  pimcommon-17.04.1.tar.xz: 7538d1bffc41c603c35dd61a108306262e4c67e8
+  pimcommon-17.12.2.tar.xz: bd18d30a2d0188e7558e4c9fe9f35a34a6b8b95d
