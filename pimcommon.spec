@@ -32,6 +32,7 @@ BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(Grantlee5)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
