@@ -3,7 +3,7 @@
 %define devname %mklibname KF5PimCommon -d
 
 Name: pimcommon
-Version:	19.04.3
+Version:	19.07.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -32,6 +32,7 @@ BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(KF5Purpose)
 BuildRequires: cmake(Grantlee5)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
@@ -73,8 +74,8 @@ Development files (Headers etc.) for %{name}.
 %find_lang libpimcommon
 
 %files -f libpimcommon.lang
-%{_sysconfdir}/xdg/pimcommon.categories
-%{_sysconfdir}/xdg/pimcommon.renamecategories
+%{_datadir}/qlogging-categories5/pimcommon.categories
+%{_datadir}/qlogging-categories5/pimcommon.renamecategories
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
