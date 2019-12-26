@@ -3,7 +3,7 @@
 %define devname %mklibname KF5PimCommon -d
 
 Name: pimcommon
-Version:	19.11.90
+Version:	19.12.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -11,7 +11,7 @@ Version:	19.11.90
 %define ftpdir stable
 %endif
 Release:	1
-Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for personal information management
 URL: http://kde.org/
 License: GPL
@@ -37,6 +37,7 @@ BuildRequires: cmake(Grantlee5)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
+BuildRequires: cmake ninja
 Obsoletes:	kdepim-core < 3:17.04.0
 Obsoletes:	kdepim-core = 3:17.04.0
 Obsoletes:	storageservicemanager < 3:17.04.0
@@ -62,15 +63,14 @@ Requires: %{libname} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %prep
-%setup -q
-%apply_patches
-%cmake_kde5 -G "Unix Makefiles"
+%autosetup -p1
+%cmake_kde5
 
 %build
-%make -C build
+%ninja_build -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 %find_lang libpimcommon
 
 %files -f libpimcommon.lang
