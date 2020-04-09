@@ -12,6 +12,7 @@ Version:	20.03.90
 %endif
 Release:	2
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0: pimcommon-20.03.90-qt-5.15.patch
 Summary: KDE library for personal information management
 URL: http://kde.org/
 License: GPL
