@@ -34,6 +34,7 @@ BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5Purpose)
 BuildRequires: cmake(KF5KCMUtils)
+BuildRequires: cmake(KF5AkonadiContact)
 BuildRequires: cmake(Grantlee5)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
