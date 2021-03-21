@@ -1,8 +1,6 @@
 %define major 5
 %define libname %mklibname KF5PimCommon %{major}
 %define devname %mklibname KF5PimCommon -d
-# Workaround for lld 12 crashing at link time
-%define _disable_lto 1
 
 Name: pimcommon
 Version:	21.03.80
