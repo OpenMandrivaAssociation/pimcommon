@@ -1,9 +1,11 @@
 %define major 5
 %define libname %mklibname KF5PimCommon %{major}
 %define devname %mklibname KF5PimCommon -d
+# Workaround for lld 12 crashing at link time
+%define _disable_lto 1
 
 Name: pimcommon
-Version:	20.12.3
+Version:	21.03.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -84,7 +86,7 @@ Development files (Headers etc.) for %{name}.
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
 %{_libdir}/qt5/plugins/designer/pimcommonwidgets.so
-%{_libdir}/qt5/plugins/designer/pimcommoniakonadiwidgets.so
+%{_libdir}/qt5/plugins/designer/pimcommonakonadiwidgets.so
 
 %files -n %{devname}
 %{_includedir}/*
