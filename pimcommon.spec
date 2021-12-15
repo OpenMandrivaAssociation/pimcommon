@@ -42,6 +42,9 @@ BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
 BuildRequires: cmake ninja
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 Obsoletes:	kdepim-core < 3:17.04.0
 Obsoletes:	kdepim-core = 3:17.04.0
 Obsoletes:	storageservicemanager < 3:17.04.0
