@@ -3,14 +3,14 @@
 %define devname %mklibname KF5PimCommon -d
 
 Name: pimcommon
-Version:	22.12.3
+Version:	23.03.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for personal information management
 URL: http://kde.org/
@@ -38,6 +38,7 @@ BuildRequires: cmake(KF5AkonadiContact)
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Ldap)
 BuildRequires: cmake(Grantlee5)
+BuildRequires: cmake(KF5TextAutoCorrection)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
@@ -86,8 +87,8 @@ Development files (Headers etc.) for %{name}.
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
-%{_libdir}/qt5/plugins/designer/pimcommonwidgets.so
-%{_libdir}/qt5/plugins/designer/pimcommonakonadiwidgets.so
+%{_libdir}/qt5/plugins/designer/pimcommon5widgets.so
+%{_libdir}/qt5/plugins/designer/pimcommon5akonadiwidgets.so
 
 %files -n %{devname}
 %{_includedir}/*
