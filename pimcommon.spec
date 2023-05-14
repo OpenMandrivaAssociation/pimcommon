@@ -12,6 +12,10 @@ Version:	23.04.1
 %endif
 Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+# Drop support for KTextAddons 1.2. We ship >= 1.3
+# and supporting both causes the cmake dependency generator
+# to require 2 conflicting versions
+Patch0: pimcommon-23.04.1-drop-ktextaddons-1.2.patch
 Summary: KDE library for personal information management
 URL: http://kde.org/
 License: GPL
@@ -38,7 +42,8 @@ BuildRequires: cmake(KF5AkonadiContact)
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Ldap)
 BuildRequires: cmake(Grantlee5)
-BuildRequires: cmake(KF5TextAutoCorrection)
+BuildRequires: cmake(KF5TextAutoCorrectionCore)
+BuildRequires: cmake(KF5TextAutoCorrectionWidgets)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
