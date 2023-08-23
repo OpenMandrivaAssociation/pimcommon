@@ -3,7 +3,7 @@
 %define devname %mklibname KF5PimCommon -d
 
 Name: pimcommon
-Version:	23.04.3
+Version:	23.08.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -25,12 +25,12 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5UiTools)
-BuildRequires: cmake(KF5Akonadi)
-BuildRequires: cmake(KF5AkonadiMime)
+BuildRequires: cmake(KPim5Akonadi)
+BuildRequires: cmake(KPim5AkonadiMime)
 BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5CalendarCore)
-BuildRequires: cmake(KF5IMAP)
+BuildRequires: cmake(KPim5IMAP)
 BuildRequires: cmake(KF5NewStuff)
 BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5DBusAddons)
@@ -38,9 +38,9 @@ BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5Purpose)
 BuildRequires: cmake(KF5KCMUtils)
-BuildRequires: cmake(KF5AkonadiContact)
-BuildRequires: cmake(KF5AkonadiSearch)
-BuildRequires: cmake(KF5Ldap)
+BuildRequires: cmake(KPim5AkonadiContact)
+BuildRequires: cmake(KPim5AkonadiSearch)
+BuildRequires: cmake(KPim5Ldap)
 BuildRequires: cmake(Grantlee5)
 BuildRequires: cmake(KF5TextAutoCorrectionCore)
 BuildRequires: cmake(KF5TextAutoCorrectionWidgets)
