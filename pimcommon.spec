@@ -10,7 +10,7 @@ Version:	23.08.4
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 # Drop support for KTextAddons 1.2. We ship >= 1.3
 # and supporting both causes the cmake dependency generator
