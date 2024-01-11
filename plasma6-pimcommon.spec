@@ -3,7 +3,7 @@
 %define devname %mklibname KPim6PimCommon -d
 
 Name: plasma6-pimcommon
-Version:	24.01.85
+Version:	24.01.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -83,9 +83,9 @@ Development files (Headers etc.) for %{name}.
 
 %install
 %ninja_install -C build
-%find_lang libpimcommon
+%find_lang libpimcommon6
 
-%files -f libpimcommon.lang
+%files -f libpimcommon6.lang
 %{_datadir}/qlogging-categories6/pimcommon.categories
 %{_datadir}/qlogging-categories6/pimcommon.renamecategories
 
