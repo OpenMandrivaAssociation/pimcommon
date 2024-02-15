@@ -3,14 +3,14 @@
 %define devname %mklibname KF5PimCommon -d
 
 Name: pimcommon
-Version:	23.08.4
+Version:	23.08.5
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	3
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 # Drop support for KTextAddons 1.2. We ship >= 1.3
 # and supporting both causes the cmake dependency generator
