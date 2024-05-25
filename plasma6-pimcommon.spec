@@ -43,6 +43,7 @@ BuildRequires: cmake(KF6TextAutoCorrectionWidgets)
 BuildRequires: cmake(KF6TextWidgets)
 BuildRequires: cmake(KF6TextAddonsWidgets)
 BuildRequires: cmake(KF6TextCustomEditor)
+BuildRequires: cmake(KF6JobWidgets)
 BuildRequires: cmake(KPim6Akonadi)
 BuildRequires: cmake(KPim6AkonadiMime)
 BuildRequires: cmake(KPim6IMAP)
@@ -55,10 +56,11 @@ BuildRequires: cmake(KPim6LdapWidgets)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
-BuildRequires: cmake ninja
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
+BuildSystem: cmake
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KDE library for personal information management.
@@ -77,19 +79,11 @@ Group: Development/C
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files (Headers etc.) for %{name}.
+Development files for %{name}
 
-%prep
-%autosetup -p1 -n pimcommon-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
+KDE library for personal information management.
 
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
+%install -a
 %find_lang libpimcommon6
 
 %files -f libpimcommon6.lang
