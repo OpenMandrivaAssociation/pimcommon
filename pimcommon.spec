@@ -17,7 +17,7 @@ Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name
 # to require 2 conflicting versions
 Patch0: pimcommon-23.04.1-drop-ktextaddons-1.2.patch
 Summary: KDE library for personal information management
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
