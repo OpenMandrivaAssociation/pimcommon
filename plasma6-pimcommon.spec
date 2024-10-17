@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/pimcommon/-/archive/%{gitbranch}/pimcommon-%
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/pimcommon-%{version}.tar.xz
 %endif
 Summary: KDE library for personal information management
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
