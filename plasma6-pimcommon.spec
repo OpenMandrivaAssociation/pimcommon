@@ -13,7 +13,7 @@ Version:	25.04.0
 %else
 %define ftpdir stable
 %endif
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/pimcommon/-/archive/%{gitbranch}/pimcommon-%{gitbranchd}.tar.bz2#/pimcommon-%{git}.tar.bz2
 %else
@@ -54,6 +54,7 @@ BuildRequires: cmake(KPim6AkonadiContactWidgets)
 BuildRequires: cmake(KPim6AkonadiSearch)
 BuildRequires: cmake(KPim6LdapCore)
 BuildRequires: cmake(KPim6LdapWidgets)
+BuildRequires: cmake(PlasmaActivities)
 BuildRequires: xsltproc
 BuildRequires: sasl-devel
 BuildRequires: boost-devel
