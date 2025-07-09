@@ -5,8 +5,8 @@
 %define libname %mklibname KPim6PimCommon
 %define devname %mklibname KPim6PimCommon -d
 
-Name: plasma6-pimcommon
-Version:	25.04.0
+Name: pimcommon
+Version:	25.04.3
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -63,6 +63,7 @@ BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
 BuildSystem: cmake
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%rename plasma6-pimcommon
 
 %description
 KDE library for personal information management.
@@ -85,10 +86,7 @@ Development files for %{name}
 
 KDE library for personal information management.
 
-%install -a
-%find_lang libpimcommon6
-
-%files -f libpimcommon6.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/pimcommon.categories
 %{_datadir}/qlogging-categories6/pimcommon.renamecategories
 
